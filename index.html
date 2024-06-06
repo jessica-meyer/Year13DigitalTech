@@ -48,10 +48,58 @@
 <!--*************************************************************
   BODY
 **************************************************************-->
-<body class="w3-pink">
-  <h1>hello</h1>
-  
-</body>
+  <body>
+      <div class="container">
+          <div class="header" id="header">
+              <h3 id="subtext">Some extra text about the amazing site</h3>
+              <h1 id="title">Cram Jam</h1>
+          </div>
+          <div class="nav" id="nav">
+              <a id="home" href="index.html">Home</a>
+              <a href="random.html">Calender</a>
+              <a href="">To-Do</a>
+              <a href="">Study Timer</a>
+              <a href="">Resource Generator</a>
+              <a href="">Help Resources</a>
+          </div>
+          <div class="content" id="one">
+              <div class="contentOne" id="contentOne">
+                  <div class="bigImage" id="image">
+                      <img src="indexImage.jpg" id="indexImage">
+                  </div>
+                  <div class="login" id="login">
+                      <div class="w3-card">
+                          <h2 id="loginTitle">Login</h2>
+                          <p>Save Your Progress: Don't lose track of your study journey. Logging in allows you to save your progress across multiple sessions, so you can pick up right where you left off and make steady strides toward your academic goals without missing a beat.
+                          </p>
+                          <button onclick="fbR_initialise(); fb_login(userDetails, fbR_procLogin); html_load()" id="loginButton" class="w3-hover-shadow">Login / Sign Up</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="content" id="two">
+              <div class="contentTwo" id="contentTwo">
+                  <div class="text" id="text">
+                      <p>At Cram Jam, we're dedicated to empowering learners of all ages and backgrounds to achieve their academic goals. Whether you're a high school student preparing for exams, a college student tackling challenging coursework, or a lifelong learner eager to expand your knowledge, we're here to support you every step of the way.
+                      </p>
+                  </div>
+                  <div class="image" id="imageOne">
+                      <img src="jojosiwa.jpeg" id="jojosiwa">
+                      <button class="w3-hover-shadow" id="pageButton">Study Timer</button>
+                  </div>
+                  <div class="image" id="imageTwo">
+                      <img src="jojosiwa.jpeg" id="jojosiwa">
+                      <button class="w3-hover-shadow" id="pageButton">Resource Generator</button>
+                  </div>
+                  <div class="image" id="imageThree">
+                      <img src="jojosiwa.jpeg" id="jojosiwa">
+                      <button class="w3-hover-shadow" id="pageButton">Calender</button>
+                  </div>
+              </div>
+          </div>
+          <div class="footer" id="footer"></div>
+      </div>
+  </body>
 </html>
 
 <!--*************************************************************
