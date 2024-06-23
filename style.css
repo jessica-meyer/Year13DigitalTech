@@ -57,6 +57,10 @@ h3, h1 {
   text-decoration: underline;
 }
 
+.nav .icon {
+  display: none;
+}
+
 #home {
   text-decoration: underline;
 }
@@ -100,7 +104,6 @@ h3, h1 {
     padding: 15px;
     border-radius: 15px;
     height: 100%;
-  
 }
 
 #indexImage {
@@ -209,4 +212,77 @@ h3, h1 {
 
 #smallImage {
   width: 350px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #nav {grid-area: nav;}
+  #header {grid-area: header;}
+  #one {grid-area: one;}
+  #two {grid-area: two;}
+  #footer {grid-area: footer;}
+
+  .container {
+    display: grid;
+    grid-template-areas:
+    'header'
+    'nav'
+    'one'
+    'two'
+    'footer';
+  }
+
+  #image {grid-area: image; }
+  #login { grid-area: login; }
+
+  .contentOne {
+    display: grid;
+    grid-template-areas:
+    'image'
+    'image'
+    'image'
+    'login';
+  }
+
+  #text {grid-area: text; }
+  #imageOne { grid-area: imageOne; }
+  #imageTwo { grid-area: imageTwo; }
+  #imageThree { grid-area: imageThree; }
+
+  .contentTwo {
+    display: grid;
+    grid-template-areas:
+    'text'
+    'imageOne'
+    'imageTwo'
+    'imageThree';
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .nav a:not(:first-child) {
+    display: none;
+  }
+
+  .nav a:first-child {
+   float: right; 
+  }
+  
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+  
+  .nav.responsive {position: relative;}
+  .nav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
