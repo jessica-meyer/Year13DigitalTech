@@ -1,3 +1,16 @@
+<!--***********************************************************/
+// index.html
+// 
+// Test registration page
+// Written by Mr Bob 2020
+// v01 Initial code
+// v02 Include reg_getFormItemValue function in reg_manager.js 
+// v03 Add reg_prep function
+// v04 Add conversion from string to number for numeric feilds
+// v05 Cut down version
+// v06 Check if form passed html validation
+// v07 Alter to be used as standalone html file
+/***********************************************************-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +20,15 @@
   <meta name="author" content="?????">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/assets/images/dtec_favicon.PNG">
-
+  
   <!-- stylesheets *******************************************-->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="reg.css">
+  <link rel="stylesheet" href="/registration/reg.css">
 
   <!-- link for the form's 1st 2 icons **********************-->
   <link rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- P5.js & P5.play ***************************************-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-  <script src="https://p5play.org/v3/planck.min.js"></script>
-  <script src="https://p5play.org/v3/p5play.js"></script>
-
+  
   <!-- firebase start ****************************************-->
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <!-- Firebase App (core Firebase SDK) always required & must be listed 1st -->
@@ -32,10 +38,10 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script> 
   <!-- firebase end ******************************************-->
-
+  
   <!-- JQUERY ************************************************-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  
   <!-- Your modules ******************************************-->
   <script defer src="/firebase/fb_io.js"></script>
   <script defer src="/firebase/fbR_manager.js"></script>
@@ -46,7 +52,7 @@
 
 <body onload='html_load(); reg_getElement()' class="w3-container w3-light-gray"> 
   <!--***********************************************************
-      REGISTRATION PAGE 
+			REGISTRATION PAGE 
   ************************************************************-->
   <section id="registrationPage">
     <div class="margin-top w3-container w3-col s12 m12 l12 w3-small">
@@ -62,7 +68,7 @@
             <p id="p_regName" class="w3-white w3-border w3-padding"></p>
           </div>
         </div>
-
+        
         <!--Email-->
         <div class="w3-row">
           <div class="w3-col">
@@ -81,19 +87,19 @@
                    type="text" placeholder="Username">
           </div>
         </div>
-
+        
         <!--Age-->
         <div class="w3-row w3-section">
           <div class="w3-col"></div>
           <div class="w3-col">
-            <img src="age.jpeg" 
+            <img src="/assests/age.jpg" 
                  alt="age" width="40" height="40"></div>
           <div class="w3-rest">
             <input class="w3-input w3-border" min="10" max="99" required name="age" 
                    type="number" placeholder="Age">
           </div>
         </div>
-
+        
         <!--Phone-->
         <div class="w3-row w3-section">
           <div class="w3-col">
@@ -103,12 +109,12 @@
                    type="number" placeholder="Phone">
           </div>
         </div>
-
+        
         <!--Role-->
         <div class="w3-row w3-section">
           <div class="w3-col"></div>
           <div class="w3-col">
-            <img src=".jpeg" 
+            <img src="" 
                  alt="" width="40" height="40"></div>
             <div class="w3-col">
                 <select id="role">
@@ -122,7 +128,7 @@
         <!--Gender-->
         <div class="w3-row w3-section">
           <div class="w3-col">
-            <img src="gender.jpeg" 
+            <img src="/assests/gender.jpg" 
                  alt="Gender symbol" width="40" height="30"></div>
           <div class="w3-col">
             <select id="gender">
@@ -133,7 +139,7 @@
             </select>
           </div>
         </div>
-
+        
         <!--Button-->
         <div class="w3-col m1"></div>
         <div class="w3-rest">
@@ -143,10 +149,10 @@
           </button>
         </div>
       </form>
-
+      
     </div>
   </section>
-
+  
 </body>
 </html>
 

@@ -267,19 +267,19 @@ h3, h1 {
   .nav a:first-child {
    float: right; 
   }
-  
+
   .nav a.icon {
     float: right;
     display: block;
   }
-  
+
   .nav.responsive {position: relative;}
   .nav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  
+
   .nav.responsive a {
     float: none;
     display: block;

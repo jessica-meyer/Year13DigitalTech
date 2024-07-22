@@ -11,7 +11,7 @@
 
     <!-- stylesheets *******************************************-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reGen.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- fonts *************************************************-->
@@ -50,6 +50,7 @@
             <h3 id="subtext">Some extra text about the amazing site</h3>
             <h1 id="title">Cram Jam</h1>
         </div>
+        
         <div class="nav" id="nav">
             <a href="javascript:void(0);" class="icon" onclick="navRespon()">
                 <i class="fa fa-bars"></i>
@@ -60,58 +61,19 @@
             <a href="">Study Timer</a>
             <a href="reGen.html">Resource Generator</a>
             <a href="">Help Resources</a>
-            
         </div>
-        <div class="content" id="one">
-            <div class="contentOne" id="contentOne">
-                <div class="bigImage" id="image">
-                    <img src="/assests/IMG_0221crop.jpg" id="indexImage">
-                </div>
-                <div class="login" id="login">
-                    <div class="w3-card">
-                        <h2 id="loginTitle">Login</h2>
-                        <p id="loginText">Save Your Progress: Don't lose track of your study journey.
-                        </p>
-                        <p id="loginText">Logging in allows you to save your progress across multiple sessions, so you
-                            can pick up right where you left off and make steady strides toward your academic goals
-                            without missing a beat.
-                        </p>
-                        <button onclick="fbR_initialise(); fb_login(userDetails, fbR_procLogin); html_load()"
-                            id="loginButton" class="w3-hover-shadow">Login / Sign Up</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content" id="two">
-            <div class="contentTwo" id="contentTwo">
-                <div class="text" id="text">
-                    <p>At Cram Jam, we're dedicated to empowering learners of all ages and backgrounds to achieve their
-                        academic goals. Whether you're a high school student preparing for exams, a college student
-                        tackling challenging coursework, or a lifelong learner eager to expand your knowledge, we're
-                        here to support you every step of the way.
-                    </p>
-                </div>
 
-                
-                <div class="smallImage" id="imageOne">
-                    <img src="/assests/imageOne.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Study Timer</button>
-                </div>
-                
-                
-                <div class="smallImage" id="imageTwo">
-                    <img src="/assests/imageTwo.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Resource Generator</button>
-                </div>
-                
-                <div class="smallImage" id="imageThree">
-                    <img src="/assests/imageThree.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Calender</button>
-                </div>
+        <div class="container">
+          <h1 id="ficTitle">Enter a New Fic</h1>
 
-                
-            </div>
+          <input class="w3-input w3-border" placeholder="link to fic" type="text" id="ficLink">
+          <input class="w3-input w3-border" placeholder="name of fic" type="text" id="ficName">
+          <input class="w3-input w3-border" placeholder="author of fic" type="text" id="ficAuthor">
+          <input class="w3-input w3-border" placeholder="word count" type="text" id="ficWords">
+          <input class="w3-input w3-border" placeholder="fic rating" type="text" id="ficRating">
+          <button onclick="enterFic()" id="ficButton" class="w3-button w3-block w3-ripple w3-dark-grey">Submit</button>
         </div>
+    </div>
         <div class="footer" id="footer"></div>
     </div>
 </body>
