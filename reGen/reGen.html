@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>13 dtech</title>
+    <title>Resource Generator</title>
     <meta charset="UTF-8">
     <meta name="description" content="13COMP firebase">
     <meta name="author" content="?????">
@@ -11,7 +11,7 @@
 
     <!-- stylesheets *******************************************-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="reGen.css">
+    <link rel="stylesheet" href="/reGen/reGen.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- fonts *************************************************-->
@@ -38,7 +38,7 @@
     <script src="/firebase/fb_io.js" defer></script>
     <script src="/firebase/fbR_manager.js" defer></script>
     <script src="/firebase/html_manager.js" defer></script>
-    <script src="/reGen.js" defer></script>
+    <script src="/reGen/reGen.js" defer></script>
 </head>
 
 <!--*************************************************************
@@ -56,59 +56,44 @@
             <a href="javascript:void(0);" class="icon" onclick="navRespon()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="index.html">Home</a>
+            <a href="/index.html">Home</a>
             <a href="">Calender</a>
             <a href="">To-Do</a>
             <a href="">Study Timer</a>
-            <a id="home" href="reGen.html">Resource Generator</a>
+            <a id="home" href="/reGen/reGen.html">Resource Generator</a>
             <a href="">Help Resources</a>
         </div>
 
         <div id="formStuff">
-              <h2>NZQA Resource Generator</h2>
-              <label for="answerOrExam">Exam or answers?</label><br />
+              <h2 id="sectionTitle">NZQA Resource Generator</h2>
+              <label for="answerOrExam">Exam or answers?</label>
+            <br>
               <select name="answerOrExam" id="answerOrExam" class="selectThing">
                 <option value="exam">exam</option>
                 <option value="answer">answer</option>
-                <option value="formula">resource sheet</option></select
-              ><br />
+                <option value="formula">resource sheet</option>
+              </select>
+            <br>
 
-              <label for="year">What year:</label><br />
-              <input type="text" id="year" class="selectThing" />
-              <br />
-              <label for="theNumber"
-                >The assessment number (e.g 91171, you can type a subject/keyword and a
-                dropdown will appear with standards):</label
-              ><br />
-
-              <input type="text" id="theNumber" class="selectThing" />
+              <label for="year">What year:</label>
+            <br>
+              <select name="year" id="year" class="selectThing">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            <br>
+            
+              <label for="theNumber">The assessment number (e.g 91171):</label>
+            <br>
+              <input type="text" id="theNumber" class="selectThing">
               <div id="results"></div>
-              <br />
-              <br />
 
+            <br>
               <button onclick="generateResourceLink()" class="selectThing button1">
-                Open Link
+                Generate Resource
               </button>
-            </div>
-
-            <!-- Display the result and other links on the page as hyperlinks -->
-            <div id="resultStuff">
-              <p id="result"></p>
-              <h3 id="heading-small"></h3>
-              <p id="link1"></p>
-              <p id="link2"></p>
-            </div>
-
-
-
-
-
-
-
-
-
-        
-        
+          </div>
     </div>
     <div class="footer" id="footer"></div>
 </body>
