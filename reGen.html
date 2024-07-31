@@ -38,6 +38,7 @@
     <script src="/firebase/fb_io.js" defer></script>
     <script src="/firebase/fbR_manager.js" defer></script>
     <script src="/firebase/html_manager.js" defer></script>
+    <script src="/reGen.js" defer></script>
 </head>
 
 <!--*************************************************************
@@ -55,27 +56,61 @@
             <a href="javascript:void(0);" class="icon" onclick="navRespon()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a id="home" href="index.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="">Calender</a>
             <a href="">To-Do</a>
             <a href="">Study Timer</a>
-            <a href="reGen.html">Resource Generator</a>
+            <a id="home" href="reGen.html">Resource Generator</a>
             <a href="">Help Resources</a>
         </div>
 
-        <div class="container">
-          <h1 id="ficTitle">Enter a New Fic</h1>
+        <div id="formStuff">
+              <h2>NZQA Resource Generator</h2>
+              <label for="answerOrExam">Exam or answers?</label><br />
+              <select name="answerOrExam" id="answerOrExam" class="selectThing">
+                <option value="exam">exam</option>
+                <option value="answer">answer</option>
+                <option value="formula">resource sheet</option></select
+              ><br />
 
-          <input class="w3-input w3-border" placeholder="link to fic" type="text" id="ficLink">
-          <input class="w3-input w3-border" placeholder="name of fic" type="text" id="ficName">
-          <input class="w3-input w3-border" placeholder="author of fic" type="text" id="ficAuthor">
-          <input class="w3-input w3-border" placeholder="word count" type="text" id="ficWords">
-          <input class="w3-input w3-border" placeholder="fic rating" type="text" id="ficRating">
-          <button onclick="enterFic()" id="ficButton" class="w3-button w3-block w3-ripple w3-dark-grey">Submit</button>
-        </div>
+              <label for="year">What year:</label><br />
+              <input type="text" id="year" class="selectThing" />
+              <br />
+              <label for="theNumber"
+                >The assessment number (e.g 91171, you can type a subject/keyword and a
+                dropdown will appear with standards):</label
+              ><br />
+
+              <input type="text" id="theNumber" class="selectThing" />
+              <div id="results"></div>
+              <br />
+              <br />
+
+              <button onclick="generateResourceLink()" class="selectThing button1">
+                Open Link
+              </button>
+            </div>
+
+            <!-- Display the result and other links on the page as hyperlinks -->
+            <div id="resultStuff">
+              <p id="result"></p>
+              <h3 id="heading-small"></h3>
+              <p id="link1"></p>
+              <p id="link2"></p>
+            </div>
+
+
+
+
+
+
+
+
+
+        
+        
     </div>
-        <div class="footer" id="footer"></div>
-    </div>
+    <div class="footer" id="footer"></div>
 </body>
 
 </html>

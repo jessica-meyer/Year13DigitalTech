@@ -37,8 +37,8 @@ h3, h1 {
     height: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
+    overflow: hidden;
 }
-
 .nav a {
   float: center;
   color: #F4F2ED;
@@ -213,6 +213,8 @@ h3, h1 {
 #smallImage {
   width: 350px;
 }
+
+
 
 /* mobile view */
 @media only screen and (max-width: 600px) {
