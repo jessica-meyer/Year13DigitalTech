@@ -74,7 +74,7 @@ function fbR_procWrite(_path, _key, _data, _error) {
   else {
     writeStatus = 'OK';
     console.log('fbR_procWrite: path/key = ' + _path + '/' + _key + ',   OK');
-    window.location.href = "random.html";
+    window.location.href = "";
   }
 }
 
@@ -89,7 +89,7 @@ function fbR_procReadUD(_result, _snapshot, _save) {
   if (_snapshot.val() == null) {
     // User NOT registered
     readStatus = "no record";
-    window.location.href = "reg.html";
+    window.location.href = "/registration/reg.html";
   }
   else {
     // user already registered

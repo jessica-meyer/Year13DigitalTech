@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CramJam</title>
+    <title>Resource Generator</title>
     <meta charset="UTF-8">
     <meta name="description" content="13COMP firebase">
     <meta name="author" content="?????">
@@ -11,7 +11,7 @@
 
     <!-- stylesheets *******************************************-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/reGen/reGen.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- fonts *************************************************-->
@@ -38,6 +38,7 @@
     <script src="/firebase/fb_io.js" defer></script>
     <script src="/firebase/fbR_manager.js" defer></script>
     <script src="/firebase/html_manager.js" defer></script>
+    <script src="/reGen/reGen.js" defer></script>
 </head>
 
 <!--*************************************************************
@@ -50,70 +51,51 @@
             <h3 id="subtext">Some extra text about the amazing site</h3>
             <h1 id="title">Cram Jam</h1>
         </div>
+        
         <div class="nav" id="nav">
             <a href="javascript:void(0);" class="icon" onclick="navRespon()">
                 <i class="fa fa-bars"></i>
             </a>
-            <a id="home" href="/index.html">Home</a>
+            <a href="/index.html">Home</a>
             <a href="">Calender</a>
             <a href="">To-Do</a>
             <a href="">Study Timer</a>
-            <a href="/reGen/reGen.html">Resource Generator</a>
+            <a id="home" href="/reGen/reGen.html">Resource Generator</a>
             <a href="">Help Resources</a>
+        </div>
+
+        <div id="formStuff">
+              <h2 id="sectionTitle">NZQA Resource Generator</h2>
+              <label for="answerOrExam">Exam or answers?</label>
+            <br>
+              <select name="answerOrExam" id="answerOrExam" class="selectThing">
+                <option value="exam">exam</option>
+                <option value="answer">answer</option>
+                <option value="formula">resource sheet</option>
+              </select>
+            <br>
+
+              <label for="year">What year:</label>
+            <br>
+              <select name="year" id="year" class="selectThing">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            <br>
             
-        </div>
-        <div class="content" id="one">
-            <div class="contentOne" id="contentOne">
-                <div class="bigImage" id="image">
-                    <img src="/assests/IMG_0221crop.jpg" id="indexImage">
-                </div>
-                <div class="login" id="login">
-                    <div class="w3-card">
-                        <h2 id="loginTitle">Login</h2>
-                        <p id="loginText">Save Your Progress: Don't lose track of your study journey.
-                        </p>
-                        <p id="loginText">Logging in allows you to save your progress across multiple sessions, so you
-                            can pick up right where you left off and make steady strides toward your academic goals
-                            without missing a beat.
-                        </p>
-                        <button onclick="fbR_initialise(); fb_login(userDetails, fbR_procLogin); html_load()"
-                            id="loginButton" class="w3-hover-shadow">Login / Sign Up</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content" id="two">
-            <div class="contentTwo" id="contentTwo">
-                <div class="text" id="text">
-                    <p>At Cram Jam, we're dedicated to empowering learners of all ages and backgrounds to achieve their
-                        academic goals. Whether you're a high school student preparing for exams, a college student
-                        tackling challenging coursework, or a lifelong learner eager to expand your knowledge, we're
-                        here to support you every step of the way.
-                    </p>
-                </div>
+              <label for="theNumber">The assessment number (e.g 91171):</label>
+            <br>
+              <input type="text" id="theNumber" class="selectThing">
+              <div id="results"></div>
 
-                
-                <div class="smallImage" id="imageOne">
-                    <img src="/assests/imageOne.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Study Timer</button>
-                </div>
-                
-                
-                <div class="smallImage" id="imageTwo">
-                    <img src="/assests/imageTwo.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Resource Generator</button>
-                </div>
-                
-                <div class="smallImage" id="imageThree">
-                    <img src="/assests/imageThree.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Calender</button>
-                </div>
-
-                
-            </div>
-        </div>
-        <div class="footer" id="footer"></div>
+            <br>
+              <button onclick="generateResourceLink()" class="selectThing button1">
+                Generate Resource
+              </button>
+          </div>
     </div>
+    <div class="footer" id="footer"></div>
 </body>
 
 </html>

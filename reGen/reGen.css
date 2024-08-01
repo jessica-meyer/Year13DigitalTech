@@ -37,8 +37,8 @@ h3, h1 {
     height: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
+    overflow: hidden;
 }
-
 .nav a {
   float: center;
   color: #F4F2ED;
@@ -65,68 +65,6 @@ h3, h1 {
   text-decoration: underline;
 }
 
-.bigImage {
-  background-color: white;
-  padding: 20px 10px 20px 40px;
-  text-align: center;
-  margin: 5px;
-}
-
-.login { 
-  background-color: white;
-  padding: 20px 40px 20px 10px;
-  text-align: center;
-  margin: 5px;
-}
-
-#loginButton {
-  background-color: #F44174;
-  font-family: "Inter", sans-serif;
-  border: none;
-  color: #F4F2ED;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-#loginTitle {
-  font-family: "Staatliches", sans-serif;
-  color: #F44174;
-  font-size: 50px; 
-  margin-bottom: 0px;
-}
-
-.w3-card {
-    background-color: #F4F2ED;
-    padding: 15px;
-    border-radius: 15px;
-    height: 100%;
-}
-
-#indexImage {
-  width: 100%;
-  object-fit: contain;
-}
-
-#nav {grid-area: nav;}
-#header {grid-area: header;}
-#one {grid-area: one;}
-#two {grid-area: two;}
-#footer {grid-area: footer;}
-
-.container {
-  display: grid;
-  grid-template-areas:
-  'header header'
-  'nav nav'
-  'one one'
-  'two two'
-  'footer footer';
-}
-
 .header {
   background-color: #8BAAAD;
   text-align: center;
@@ -146,72 +84,43 @@ h3, h1 {
   height: 100px;
 }
 
-#image {grid-area: image; }
-#login { grid-area: login; }
-
-.contentOne {
-  display: grid;
-  grid-template-areas:
-  'image image image login';
+.selectThing {
+    width: 100%;
+    margin: 0px 0px 12px 0px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 
-#text {grid-area: text; }
-#imageOne { grid-area: imageOne; }
-#imageTwo { grid-area: imageTwo; }
-#imageThree { grid-area: imageThree; }
-
-.contentTwo {
-  display: grid;
-  grid-template-areas:
-  'text text text'
-  'imageOne imageTwo imageThree';
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.image {
-  background-color: white;
-  padding: 40px;
-  text-align: center;
-  margin: 5px;
-}
-
-.text { 
-  background-color: white;
-  padding: 0px 20px 0px 20px;
-  text-align: center;
-  margin: 5px;
-  font-size: 16px;
-  font-weight: 500px;
-}
-
-#loginText {
-  font-family: "Inter", sans-serif;
-  color: #000;
-  font-size: 18px;
-  font-weight: 450;
-  margin-top: 0px;
-  margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-#pageButton {
+.button1 {
   background-color: #F44174;
-  font-family: "Inter", sans-serif;
-  border: none;
   color: #F4F2ED;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 500;
-  width: 350px;
+  border: 1px solid #F44174;
+  cursor: pointer;
 }
 
-#smallImage {
-  width: 350px;
+.button1:hover{
+  background-color: #eeaabd;
+  border-color:#eeaabd;
+}
+
+label {
+    font-size: 15px;
+    color: black;
+    font-family: "Inter", sans-serif;
+}
+
+#formStuff {
+  padding: 40px 60px 40px 60px;
+}
+
+#sectionTitle {
+  font-family: "Staatliches", sans-serif;
+  color: #F44174;
+  font-size: 50px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 /* mobile view */
@@ -267,19 +176,19 @@ h3, h1 {
   .nav a:first-child {
    float: right; 
   }
-  
+
   .nav a.icon {
     float: right;
     display: block;
   }
-  
+
   .nav.responsive {position: relative;}
   .nav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  
+
   .nav.responsive a {
     float: none;
     display: block;
