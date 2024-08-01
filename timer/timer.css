@@ -86,46 +86,9 @@ h3, h1 {
 
 /* PAGE SPECIFIC */
 
-.selectThing {
-    width: 100%;
-    margin: 0px 0px 12px 0px;
-    height: 40px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 4px;
-}
 
-.button1 {
-  background-color: #F44174;
-  color: #F4F2ED;
-  border: 1px solid #F44174;
-  cursor: pointer;
-}
 
-.button1:hover{
-  background-color: #eeaabd;
-  border-color:#eeaabd;
-}
-
-label {
-    font-size: 15px;
-    color: black;
-    font-family: "Inter", sans-serif;
-}
-
-#formStuff {
-  padding: 40px 60px 40px 60px;
-}
-
-#sectionTitle {
-  font-family: "Staatliches", sans-serif;
-  color: #F44174;
-  font-size: 50px;
-  padding-bottom: 10px;
-  text-align: center;
-}
-
-/* mobile view */
+/* MOBILE VIEW */
 @media only screen and (max-width: 600px) {
   .nav a:not(:first-child) {
     display: none;
