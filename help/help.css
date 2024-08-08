@@ -85,8 +85,43 @@ h3, h1 {
 }
 
 /* PAGE SPECIFIC */
+#sectionTitle {
+  font-family: "Staatliches", sans-serif;
+  color: #F44174;
+  font-size: 50px;
+  padding-top: 40px;
+  text-align: center;
+  margin-bottom: 0px;
+}
 
+#sectionSub {
+  font-family: "Inter", sans-serif;
+  color: #000;
+  font-size: 18px;
+  font-weight: 450;
+  margin: 0px 50px 30px 50px;
+  text-align: center;
+}
 
+.w3-card {
+  background-color: #F4F2ED;
+  font-family: "Inter", sans-serif;
+  padding: 15px 15px 15px 15px;
+  height: 100%;
+  margin: 0px 50px 15px 50px;
+}
+
+#subTitle {
+  color: #F44174;
+  font-family: "Staatliches", sans-serif;
+  font-size: 30px;
+}
+
+#paragraph {
+  font-family: "Inter", sans-serif;
+  color: #000;
+  font-size: 16px;
+}
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 600px) {
