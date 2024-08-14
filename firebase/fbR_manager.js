@@ -2,6 +2,7 @@ console.log('%cfbR_manager.js', 'color: pink');
 
 const DETAILS = "userDetails";
 const ADMIN = "adminUser";
+const CALENDER = "calender";
 
 var userDetails = {
   uid: '',
@@ -12,6 +13,14 @@ var userDetails = {
   gender: '',
   phone: '',
   role: ''
+};
+
+var eventInfo = {
+  desc: '',
+  title: '',
+  date: '',
+  month: '',
+  year: ''
 };
 
 /**************************************************************/
@@ -74,7 +83,23 @@ function fbR_procWrite(_path, _key, _data, _error) {
   else {
     writeStatus = 'OK';
     console.log('fbR_procWrite: path/key = ' + _path + '/' + _key + ',   OK');
-    window.location.href = "";
+  }
+}
+
+/**************************************************************/
+// fbR_procWrite()
+// Called by fb_write
+/**************************************************************/
+function fbR_procWriteReg(_path, _key, _data, _error) {
+  console.log("fbR_procWrite");
+  if (_error) {
+    writeStatus = 'failure';
+    console.log(_error);
+  }
+  else {
+    writeStatus = 'OK';
+    console.log('fbR_procWrite: path/key = ' + _path + '/' + _key + ',   OK');
+    window.location.href = "/index.html";
   }
 }
 
