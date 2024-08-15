@@ -8,10 +8,10 @@
 .container {
   display: grid;
   grid-template-areas:
-  'header header'
-  'nav nav'
-  'one one'
-  'footer footer';
+  'header'
+  'nav'
+  'content'
+  'footer';
 }
 
 #enter {grid-area: enter;}
@@ -245,20 +245,31 @@ label {
 }
 
 #formStuff {
-padding: 20px 60px 20px 60px;
+  padding: 20px 60px 20px 60px;
 }
 
 #sectionTitle {
-font-family: "Staatliches", sans-serif;
-color: #F44174;
-font-size: 2rem;
-padding-bottom: 10px;
+  font-family: "Staatliches", sans-serif;
+  color: #F44174;
+  font-size: 2rem;
+  padding-bottom: 10px;
 }
 
 .entry {
   padding-top: 45px;
 }
 
+/* EVENT RETURN */
+#returnTitle {
+  font-family: "Staatliches", sans-serif;
+  color: #F44174;
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+
+.return {
+  padding-top: 45px;
+}
 
 
 /* MOBILE VIEW */

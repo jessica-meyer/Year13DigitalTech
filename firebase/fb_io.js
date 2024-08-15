@@ -129,3 +129,29 @@ function fb_readRec(_path, _key, _save, _procFunc) {
     _procFunc(readStatus, null, _save, errorMsg);
   }
 }
+
+/*----------------------------------------------------*/
+// fb_readAllOn(_path, _procFunc)
+// Read all DB records for the path
+// Input: path to read from and where to save data
+// Return:
+/*----------------------------------------------------*/
+function fb_readAllOn(_path, _procfunc) {
+    console.log('%cfb_readAllOn: path= ' + _path, 'color: darkPink');
+    readStatus = ("waiting");
+    function gotRecord(snapshot) {
+        if (snapshot.val() == null) {
+            readStatus = ("no record: "+ _path);
+            _procfunc(_path, readStatus, snapshot);
+        }
+        else {
+            readStatus = ("ok");
+            _procfunc(_path, readStatus, snapshot);
+        };
+    };
+    function readError(error) {
+        readStatus = ("failure");
+        console.log(error);
+    };
+    firebase.database().ref(_path).on("value", gotRecord, readError);
+};

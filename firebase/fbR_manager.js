@@ -4,6 +4,15 @@ const DETAILS = "userDetails";
 const ADMIN = "adminUser";
 const CALENDER = "calender";
 
+var htmlData = [];
+var htmlIds = {
+    0: 'eventTitle',
+    1: 'eventDesc',
+    2: 'eventYear',
+    3: 'eventMonth',
+    4: 'eventDate'
+};
+
 var userDetails = {
   uid: '',
   email: '',
@@ -87,11 +96,11 @@ function fbR_procWrite(_path, _key, _data, _error) {
 }
 
 /**************************************************************/
-// fbR_procWrite()
+// fbR_procWriteReg()
 // Called by fb_write
 /**************************************************************/
 function fbR_procWriteReg(_path, _key, _data, _error) {
-  console.log("fbR_procWrite");
+  console.log("fbR_procWriteReg");
   if (_error) {
     writeStatus = 'failure';
     console.log(_error);
@@ -123,3 +132,57 @@ function fbR_procReadUD(_result, _snapshot, _save) {
     sessionStorage.setItem('userName', dbData.userName);
   }
 }
+
+/**************************************************************/
+// fbR_procRead()
+// Called by fb_readRec
+/**************************************************************/
+function fbR_procRead(_result, _snapshot, _save) {
+  console.log('fbR_procRead: result = ' + _result);
+
+  if (_snapshot.val() == null) {
+    readStatus = "no record";
+  }
+  else {
+    readStatus = "OK";
+    let dbData = _snapshot.val();
+    eventInfo.title = dbData.title;
+    console.log('fbR_procRead ' + eventInfo.title);
+    
+    returnDesc = dbData.desc;
+    returnYear = dbData.year;
+    returnMonth = dbData.month;
+    returnDate = dbData.date;
+    
+  }
+}
+
+/**************************************************************/
+// fbR_procReadAllOn()
+// Called by fbR_readAllOn()
+/**************************************************************/
+function fbR_procReadAllOn(_path, _readStatus, _snapshot) {
+    let snapshotData = _snapshot.val();
+    if (_snapshot.val() == null) {
+        console.log ("data = null");
+    }
+    else {
+        console.log(snapshotData);
+        htmlData[0] = snapshotData.title;
+        htmlData[1] = snapshotData.desc;
+        htmlData[2] = snapshotData.year;
+        htmlData[3] = snapshotData.month;
+        htmlData[4] = snapshotData.date;
+
+        for(let i=0; i<htmlData.length; i++){
+            inputData(htmlIds[i], htmlData[i]);
+    }
+}
+};
+
+function inputData(_id, _data) {
+    let cal_element = document.getElementById(_id);
+    let cal_text = `<p id="${_id}">${_data}</p>`;
+    cal_element.innerHTML = cal_text;
+};
+

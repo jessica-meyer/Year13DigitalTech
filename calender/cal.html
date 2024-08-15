@@ -46,7 +46,7 @@
   BODY
 **************************************************************-->
 
-<body onload='html_load()'>
+<body onload='html_load(); readEventDay()'>
     <div class="container">
         <div class="header" id="header">
             <h3 id="subtext">When You’ve Got More Procrastination Than Preparation</h3>
@@ -69,81 +69,77 @@
     <!-- Calender -->
     <div class="container2" id="container2">
         <div class="entry" id="entry">
-            <div id="entryForm">
-                  <h2 id="sectionTitle">Enter Event</h2>
-                <br>
+            <h2 id="sectionTitle">Enter Event</h2>
+            <br>
     
-                  <input type="text" id="eventTitle" class="selectThing" placeholder="Name of Event">
-                  <div id="results"></div>
+            <input type="text" id="enterTitle" class="selectThing" placeholder="Name of Event">
+            <div id="results"></div>
     
-                  <input type="text" id="eventDesc" class="selectThing" placeholder="Event Description">
-                  <div id="results"></div>
+            <input type="text" id="enterDesc" class="selectThing" placeholder="Event Description">
+            <div id="results"></div>
     
-                  <select name="date" id="date" class="selectThing">
-                    <option>--Select Day--</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                  </select>
-                <br>
-
-                  <select name="month" id="month" class="selectThing">
-                    <option>--Select Month--</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                <br>
+            <select name="date" id="date" class="selectThing">
+                <option>--Select Day--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <br>
     
-                  <select name="year" id="year" class="selectThing">
-                    <option>--Select Year--</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                  </select>
-                <br>
+            <select name="month" id="month" class="selectThing">
+                <option>--Select Month--</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <br>
     
-                  <button onclick="writeEvent()" class="selectThing button1">
-                    Create Event
-                  </button>
-              </div>
+            <select name="year" id="year" class="selectThing">
+                <option>--Select Year--</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+            </select>
+            <br>
+    
+            <button onclick="writeEvent()" class="selectThing button1">Create Event</button>
         </div>
     
     
@@ -169,12 +165,22 @@
                 <ul class="days"></ul>
             </div>
         </div>
-    </div>
 
+        
 
-    
-    <div class="return">
+        <div class="return" id="return">
+            <h2 id="returnTitle">Events On</h2>
+            <br>
 
+            <p id="eventTitle"></p>
+            <p id="eventDesc"></p>
+            <p id="eventYear"></p>
+            <p id="eventMonth"></p>
+            <p id="eventDate"></p>
+            
+        </div>
+
+        
     </div>
     
     <div class="footer" id="footer"></div>

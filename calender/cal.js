@@ -1,10 +1,18 @@
+MODULENAME = "cal.js";
+console.log('%c' + MODULENAME + ': ', 'color: lavender;');
+
 const currentDate = document.querySelector(".current-date"),
 daysTag = document.querySelector(".days"),
 prevNextIcon = document.querySelectorAll(".icons span");
 
 let date = new Date(),
   currYear = date.getFullYear(),
-  currMonth = date.getMonth();
+  currMonth = date.getMonth(),
+  currDay = date.getDate();
+
+const currentYear = currYear;
+const currentMonth = currMonth + 1;
+const currentDay = currDay;
 
 const months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -50,7 +58,7 @@ const renderCalender = () => {
         const selectedDay = parseInt(day);
 
         console.log(`Year: ${selectedYear}, Month: ${selectedMonth}, Day: ${selectedDay}`);
-        // write rec
+        // read rec
         
       }
     });
@@ -80,16 +88,17 @@ prevNextIcon.forEach(icon => {
 // Called by create event button being pressed
 /*------------------------------------------------------------*/
 function writeEvent() {
-  eventTitle = document.getElementById("eventTitle").value;
-  eventDesc = document.getElementById("eventDesc").value;
+  console.log('%cwriteEvent: ', 'color: pink;');
+  eventTitle = document.getElementById("enterTitle").value;
+  eventDesc = document.getElementById("enterDesc").value;
   eventDate = document.getElementById("date").value;
   eventMonth = document.getElementById("month").value;
   eventYear = document.getElementById("year").value;
 
   if (eventTitle === '' || eventDesc === '') {
     alert("Empty Field! Please fill it in to continue!");
-    document.getElementById('eventTitle').value='';
-    document.getElementById('eventDesc').value='';
+    document.getElementById('enterTitle').value='';
+    document.getElementById('enterDesc').value='';
   } 
   else if (eventDate === '--Select Day--' || eventMonth === '--Select Month--' || eventYear === '--Select Year--') {
     alert("Empty Date! Please select a date to continue!");
@@ -105,10 +114,25 @@ function writeEvent() {
 
     fb_writeRec(CALENDER, writeKey, eventInfo, fbR_procWrite);
 
-    document.getElementById('eventTitle').value='';
-    document.getElementById('eventDesc').value='';
+    document.getElementById('enterTitle').value='';
+    document.getElementById('enterDesc').value='';
     document.getElementById('date').value='--Select Day--';
     document.getElementById('month').value='--Select Month--';
     document.getElementById('year').value='--Select Year--';
   }
+}
+
+/*------------------------------------------------------------*/
+// readEvent()
+// Called by page onload
+/*------------------------------------------------------------*/
+function readEventDay() {
+  console.log('%creadEvent: ', 'color: pink;');
+
+  readKey = userDetails.uid + '/' + currentYear + '/' + currentMonth + '/' + currentDay
+
+  fb_readAllOn(CALENDER + '/' + readKey, fbR_procReadAllOn);
+  
+  
+  
 }
