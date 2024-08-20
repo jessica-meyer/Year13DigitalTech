@@ -57,8 +57,9 @@ const renderCalender = () => {
         const selectedMonth = parseInt(month) + 1;
         const selectedDay = parseInt(day);
 
-        console.log(`Year: ${selectedYear}, Month: ${selectedMonth}, Day: ${selectedDay}`);
-        // read rec
+        readKey = userDetails.uid + '/' + selectedYear + '/' + selectedMonth + '/' + selectedDay
+        eventKey = selectedDay + '/' + selectedMonth + '/' + selectedYear
+        fb_readAllOn(CALENDER + '/' + readKey, fbR_procReadAllOn);
         
       }
     });
@@ -130,9 +131,7 @@ function readEventDay() {
   console.log('%creadEvent: ', 'color: pink;');
 
   readKey = userDetails.uid + '/' + currentYear + '/' + currentMonth + '/' + currentDay
+  eventKey = currentDay + '/' + currentMonth + '/' + currentYear
 
-  fb_readAllOn(CALENDER + '/' + readKey, fbR_procReadAllOn);
-  
-  
-  
+  fb_readAllOn(CALENDER + '/' + readKey, fbR_procReadAllOn); 
 }

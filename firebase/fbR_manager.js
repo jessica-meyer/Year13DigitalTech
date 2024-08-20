@@ -8,9 +8,7 @@ var htmlData = [];
 var htmlIds = {
     0: 'eventTitle',
     1: 'eventDesc',
-    2: 'eventYear',
-    3: 'eventMonth',
-    4: 'eventDate'
+    2: 'eventDate',
 };
 
 var userDetails = {
@@ -165,14 +163,16 @@ function fbR_procReadAllOn(_path, _readStatus, _snapshot) {
     let snapshotData = _snapshot.val();
     if (_snapshot.val() == null) {
         console.log ("data = null");
+        document.getElementById("eventTitle").innerHTML = 'No Events On!';
+        document.getElementById("eventDesc").innerHTML = '';
+        document.getElementById("eventDate").innerHTML = eventKey;
+      
     }
     else {
         console.log(snapshotData);
         htmlData[0] = snapshotData.title;
         htmlData[1] = snapshotData.desc;
-        htmlData[2] = snapshotData.year;
-        htmlData[3] = snapshotData.month;
-        htmlData[4] = snapshotData.date;
+        htmlData[2] = snapshotData.date + '/' + snapshotData.month + '/' + snapshotData.year;
 
         for(let i=0; i<htmlData.length; i++){
             inputData(htmlIds[i], htmlData[i]);
