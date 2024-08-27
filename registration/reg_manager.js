@@ -28,6 +28,7 @@ function reg_regDetailsEntered() {
   userDetails.userName = reg_getFormItemValue("f_reg", 0);
   userDetails.age = Number(reg_getFormItemValue("f_reg", 2));
   userDetails.gender = reg_getFormItemValue("f_reg", 1);
+  userDetails.role = reg_getFormItemValue("f_reg", 3);
 
   sessionStorage.setItem('userName', userDetails.userName);
 

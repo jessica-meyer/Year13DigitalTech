@@ -64,6 +64,40 @@
             <a href="/help/help.html">Help Resources</a>
         </div>
     </div>
+
+    <h2 id="sectionTitle">Study Timer</h2>
+    <div class="timer">
+        <div id="time">
+            <div class="circle" id="hour" style="--clr: #224344;">
+                <div class="dots hour_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="hh"></circle>
+                </svg>
+                <div id="hours">00<br><span>Hours</span></div>
+            </div>
+            
+            <div class="circle" id="minute" style="--clr: #8BAAAD;">
+                <div class="dots min_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="mm"></circle>
+                </svg>
+                <div id="minutes">00<br><span>Minutes</span></div>
+            </div>
+    
+            <div class="circle" id="second" style="--clr: #F44174;">
+                <div class="dots sec_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="ss"></circle>
+                </svg>
+                <div id="seconds">00<br><span>Seconds</span></div>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="enterTitle" class="selectThing" placeholder="Event Name">
+    <div id="results"></div>
     
     <div class="footer" id="footer">
         <div class="aboutTag" id="aboutTag">
