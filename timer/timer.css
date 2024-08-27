@@ -258,7 +258,8 @@ h3, h1 {
 #time .circle svg circle:nth-child(2) {
   stroke: var(--clr);
   /*stroke-dasharray: 440;*/
-  stroke-dasharray: 565; /* Adjust stroke-dasharray for the larger circle */
+  stroke-dasharray: 628; /* Adjust for larger circle: 2 * π * 100 (radius) */
+  stroke-dashoffset: 628; /* Match dasharray for full circle */
 }
 
 #time div {
