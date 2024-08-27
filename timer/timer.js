@@ -11,7 +11,7 @@ let min_dot = document.querySelector('.min_dot');
 let sec_dot = document.querySelector('.sec_dot');
 
 //CHANGE TO INPUT VARIABLE
-let endDate = '09/27/2024 00:00:00';
+let endDate = '09/28/2024 00:00:00';
 
 let x = setInterval(function(){
   let now = new Date(endDate).getTime();
