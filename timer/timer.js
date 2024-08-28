@@ -29,9 +29,9 @@ let x = setInterval(function(){
   seconds.innerHTML = s + "<br><span>Seconds<span>";
 
   // animation
-  hh.style.strokeDashoffset = 440 - (440 * h) / 24;
-  mm.style.strokeDashoffset = 440 - (440 * m) / 60;
-  ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+  hh.style.strokeDashoffset = 565 - (565 * h) / 24;
+  mm.style.strokeDashoffset = 565 - (565 * m) / 60;
+  ss.style.strokeDashoffset = 565 - (565 * s) / 60;
 
   hour_dot.style.transform = `rotateZ(${h * 15}deg)`;
   min_dot.style.transform = `rotateZ(${m * 6}deg)`;
