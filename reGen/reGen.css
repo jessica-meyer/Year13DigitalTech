@@ -76,14 +76,132 @@ h3, h1 {
   text-align: center;
 }
 
+/* FOOTER */
 .footer {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  padding: 0px 30px 0px 20px;
   background-color: #8BAAAD;
-  padding: 5px;
   text-align: center;
   margin-top: 30px;
-  height: 100px;
+  height: 120px;
+  position: relative;
 }
 
+.aboutTag, .quickLinks, .contact {
+  font-family: "Inter", sans-serif;
+  color: #F4F2ED;
+  position: relative;
+}
+
+.quickLinks::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 35px;
+    width: 2px;
+    border-right: 1px solid #F4F2ED;
+}
+
+.quickLinks {
+  padding-left: 70px;
+}
+
+.aboutTag h4, .quickLinks h4 {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.contact h4 {
+  font-size: 1.25rem;
+  text-align: right;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+.aboutTag p {
+  font-size: 0.9rem;
+  text-align: left;
+  margin-top: 0px;
+}
+
+.quickLinks a {
+  font-size: 0.9rem;
+  text-align: left;
+  margin-top: 0px;
+
+  #cal {grid-area: cal;}
+  #timer {grid-area: timer;}
+  #reGen {grid-area: reGen;}
+
+  display: grid;
+  grid-template-areas:
+  'cal'
+  'timer'
+  'reGen'
+}
+
+.quickLinks a:hover {
+  opacity: 0.7;
+}
+
+.contact {
+  text-align: right;
+
+  #contact {grid-area: contact;}
+  #input {grid-area: input;}
+  #social {grid-area: social;}
+
+  display: grid;
+  grid-template-areas: 
+  'contact'
+  'input'
+  'social';
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50px;
+    width: 2px;
+    border-right: 1px solid #F4F2ED;
+}
+
+.fa {
+  padding: 0px 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+#message {
+  width: 70%;
+  border: 1px solid #F4F2ED;
+}
+
+#bMessage {
+  background-color: #8BAAAD;
+  color: #F4F2ED;
+  border: 1px solid #F4F2ED;
+  cursor: pointer;
+}
+
+#bMessage:hover{
+  background-color: #aeced0;
+  border-color:#F4F2ED;
+}
+
+/* PAGE SPECIFIC */
 .selectThing {
     width: 100%;
     margin: 0px 0px 12px 0px;
@@ -125,50 +243,6 @@ label {
 
 /* mobile view */
 @media only screen and (max-width: 600px) {
-  #nav {grid-area: nav;}
-  #header {grid-area: header;}
-  #one {grid-area: one;}
-  #two {grid-area: two;}
-  #footer {grid-area: footer;}
-
-  .container {
-    display: grid;
-    grid-template-areas:
-    'header'
-    'nav'
-    'one'
-    'two'
-    'footer';
-  }
-
-  #image {grid-area: image; }
-  #login { grid-area: login; }
-
-  .contentOne {
-    display: grid;
-    grid-template-areas:
-    'image'
-    'image'
-    'image'
-    'login';
-  }
-
-  #text {grid-area: text; }
-  #imageOne { grid-area: imageOne; }
-  #imageTwo { grid-area: imageTwo; }
-  #imageThree { grid-area: imageThree; }
-
-  .contentTwo {
-    display: grid;
-    grid-template-areas:
-    'text'
-    'imageOne'
-    'imageTwo'
-    'imageThree';
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
   .nav a:not(:first-child) {
     display: none;
   }
@@ -195,27 +269,9 @@ label {
     text-align: left;
   }
 
-  #image {
-    padding: 20px 20px 10px 20px;
-  }
-
-  #login {
-    padding: 10px 20px 10px 20px;
-  }
-
-  #imageOne {
-    padding: 10px 20px 10px 20px;
-  }
-
-  #imageTwo {
-    padding: 10px 20px 10px 20px;
-  }
-
-  #imageThree {
-    padding: 10px 20px 10px 20px;
-  }
-
   .icon {
     padding: 10px 10px 10px 10px;
   }
+
+  /* PAGE SPECIFIC */
 }

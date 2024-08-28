@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To-Do</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="13COMP firebase">
+    <meta name="author" content="?????">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://codehs.com/uploads/2a367fb7543e3c18602d9bfad4bd6319">
+
+    <!-- stylesheets *******************************************-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/to-do/todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- fonts *************************************************-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Staatliches&display=swap"
+        rel="stylesheet">
+
+    <!-- firebase start ****************************************-->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- Firebase App (core Firebase SDK) always required & must be listed 1st -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+    <!-- firebase end ******************************************-->
+
+    <!-- JQUERY ************************************************-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Your modules ******************************************-->
+    <script src="/firebase/fb_io.js" defer></script>
+    <script src="/firebase/fbR_manager.js" defer></script>
+    <script src="/firebase/html_manager.js" defer></script>
+    <script src="/to-do/todo.js" defer></script>
+</head>
+
+<!--*************************************************************
+  BODY
+**************************************************************-->
+
+<body>
+    <div class="container">
+        <div class="header" id="header">
+            <h3 id="subtext">When You’ve Got More Procrastination Than Preparation</h3>
+            <h1 id="title">Cram Jam</h1>
+        </div>
+
+        <div class="nav" id="nav">
+            <a href="javascript:void(0);" class="icon" onclick="navRespon()">
+                <i class="fa fa-bars"></i>
+            </a>
+          <a href="/index.html">Home</a>
+          <a href="/calender/cal.html">Calender</a>
+          <a id="home" href="/to-do/todo.html">To-Do</a>
+          <a href="/timer/timer.html">Study Timer</a>
+          <a href="/reGen/reGen.html">Resource Generator</a>
+          <a href="/help/help.html">Help Resources</a>
+        </div>
+    </div>
+
+    <h2 id="sectionTitle">To-Do List</h2>
+    <div class="todo">
+        <h2>Add Tasks</h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Enter Item">
+            <button onclick="addTask()" id="input-button">Add</button>
+        </div>
+        <ul id="list-container">
+        </ul>
+    </div>
+    
+    <div class="footer" id="footer">
+        <div class="aboutTag" id="aboutTag">
+            <h4>about</h4>
+            <p>Cram Jam is your go-to resource for mastering tough subjects quickly. We provide bite-sized study guides, tips, and tools designed to help you ace your exams and boost your confidence. Study smart, not hard with Cram Jam!</p>
+        </div>
+
+        <div class="quickLinks" id="quickLinks">
+            <h4>quick links</h4>
+            <a href="/calender/cal.html" id="cal">Calender</a>
+            <a href="/timer/timer.html" id="timer">Study Timer</a>
+            <a href="/reGen/reGen.html" id="reGen">Resource Generator</a>
+        </div>
+
+        <div class="contact" id="contact">
+            <h4>contact</h4>
+            <div id="input">
+                <input type="text" id="message" placeholder="Enter Message">
+                <button onclick="writeMessage()" id="bMessage">Send</button>
+            </div>
+
+            <div id="social">
+                <a href="#" id="facebook" class="fa fa-facebook"></a>
+                <a href="#" id="twitter" class="fa fa-twitter"></a>
+                <a href="#" id="instagram" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!--*************************************************************
+  END OF INDEX.HTML
+**************************************************************-->

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Help Resources</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="13COMP firebase">
+    <meta name="author" content="?????">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://codehs.com/uploads/2a367fb7543e3c18602d9bfad4bd6319">
+
+    <!-- stylesheets *******************************************-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/help/help.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- fonts *************************************************-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Staatliches&display=swap"
+        rel="stylesheet">
+
+    <!-- firebase start ****************************************-->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- Firebase App (core Firebase SDK) always required & must be listed 1st -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+    <!-- firebase end ******************************************-->
+
+    <!-- JQUERY ************************************************-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Your modules ******************************************-->
+    <script src="/firebase/fb_io.js" defer></script>
+    <script src="/firebase/fbR_manager.js" defer></script>
+    <script src="/firebase/html_manager.js" defer></script>
+    <script src="/help/help.js" defer></script>
+</head>
+
+<!--*************************************************************
+  BODY
+**************************************************************-->
+
+<body>
+    <div class="container">
+        <div class="header" id="header">
+            <h3 id="subtext">When You’ve Got More Procrastination Than Preparation</h3>
+            <h1 id="title">Cram Jam</h1>
+        </div>
+
+        <div class="nav" id="nav">
+            <a href="javascript:void(0);" class="icon" onclick="navRespon()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="/index.html">Home</a>
+            <a href="/calender/cal.html">Calender</a>
+            <a href="/to-do/todo.html">To-Do</a>
+            <a href="/timer/timer.html">Study Timer</a>
+            <a href="/reGen/reGen.html">Resource Generator</a>
+            <a id="home" href="/help/help.html">Help Resources</a>
+        </div>
+
+        <div class="text" id="text">
+            <h2 id="sectionTitle">Welcome to Help Resources</h2>
+            <h5 id="sectionSub">At Cram Jam, we understand that navigating the academic landscape can sometimes be challenging. That's why we've curated this collection of helpful resources to support you in your learning journey. Whether you're seeking assistance with study techniques, time management strategies, or overcoming academic hurdles, you'll find valuable guidance and support here.</h5>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Study Techniques:</h3>
+                <p id="paragraph">Explore proven study techniques and strategies to optimize your learning experience.     Discover effective note-taking methods, memory retention techniques, and tips for staying focused and motivated while studying.</p>
+            </div>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Time Management:</h3>
+                <p id="paragraph">Master the art of time management with practical tips and tools to help you prioritize tasks, set achievable goals, and make the most of your study sessions. Learn how to create a balanced study schedule that fits your lifestyle and maximizes productivity.</p>
+            </div>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Academic Support:</h3>
+                <p id="paragraph">Find resources to help you tackle specific academic challenges, whether it's understanding complex concepts, preparing for exams, or improving your writing skills. Access study guides, practice quizzes, and additional materials tailored to your academic needs.</p>
+            </div>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Wellness and Self-Care:</h3>
+                <p id="paragraph">Take care of your well-being with resources dedicated to supporting your mental and physical health. Discover relaxation techniques, stress management strategies, and self-care practices to help you maintain a healthy balance between your academic and personal life.</p>
+            </div>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Community Support:</h3>
+                <p id="paragraph">Connect with fellow learners. Ask questions, share insights, and collaborate with peers who understand the challenges and triumphs of the learning process. Together, we can learn and grow as a community.</p>
+            </div>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Additional Resources:</h3>
+                <p id="paragraph">Explore additional resources covering a wide range of topics, including academic writing, research skills, and career development. From online tutorials to recommended reading lists, there's something here to support every aspect of your academic journey.</p>
+            </div>
+
+            <div class="w3-card">
+                <h3 id="subTitle">Get Started Today:</h3>
+                <p id="paragraph">Ready to take your learning to the next level? Dive into our collection of help resources and empower yourself to overcome challenges, achieve your goals, and succeed academically. Whether you're a student, educator, or lifelong learner, we're here to support you every step of the way.</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="footer" id="footer">
+        <div class="aboutTag" id="aboutTag">
+            <h4>about</h4>
+            <p>Cram Jam is your go-to resource for mastering tough subjects quickly. We provide bite-sized study guides, tips, and tools designed to help you ace your exams and boost your confidence. Study smart, not hard with Cram Jam!</p>
+        </div>
+
+        <div class="quickLinks" id="quickLinks">
+            <h4>quick links</h4>
+            <a href="/calender/cal.html" id="cal">Calender</a>
+            <a href="/timer/timer.html" id="timer">Study Timer</a>
+            <a href="/reGen/reGen.html" id="reGen">Resource Generator</a>
+        </div>
+
+        <div class="contact" id="contact">
+            <h4>contact</h4>
+            <div id="input">
+                <input type="text" id="message" placeholder="Enter Message">
+                <button onclick="writeMessage()" id="bMessage">Send</button>
+            </div>
+
+            <div id="social">
+                <a href="#" id="facebook" class="fa fa-facebook"></a>
+                <a href="#" id="twitter" class="fa fa-twitter"></a>
+                <a href="#" id="instagram" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!--*************************************************************
+  END OF INDEX.HTML
+**************************************************************-->

@@ -26,10 +26,9 @@ function reg_regDetailsEntered() {
   //  ENSURE THE OBJECT NAME THE PROGRAM SAVES TO IS CORRECT; 
   //    its currently details    
   userDetails.userName = reg_getFormItemValue("f_reg", 0);
-  userDetails.age = Number(reg_getFormItemValue("f_reg", 1));
-  userDetails.phone = Number(reg_getFormItemValue("f_reg", 2));
+  userDetails.age = Number(reg_getFormItemValue("f_reg", 2));
+  userDetails.gender = reg_getFormItemValue("f_reg", 1);
   userDetails.role = reg_getFormItemValue("f_reg", 3);
-  userDetails.gender = reg_getFormItemValue("f_reg", 4);
 
   sessionStorage.setItem('userName', userDetails.userName);
 
@@ -39,7 +38,7 @@ function reg_regDetailsEntered() {
   // Only write record to DB if all the fom's input passed html validation
   if (document.getElementById('f_reg').checkValidity()) {
     // call your function to write to details record firebase         //<=======
-    fb_writeRec(DETAILS, userDetails.uid, userDetails, fbR_procWrite);
+    fb_writeRec(DETAILS, userDetails.uid, userDetails, fbR_procWriteReg);
   }
 }
 

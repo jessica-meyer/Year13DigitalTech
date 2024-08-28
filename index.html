@@ -38,6 +38,20 @@
     <script src="/firebase/fb_io.js" defer></script>
     <script src="/firebase/fbR_manager.js" defer></script>
     <script src="/firebase/html_manager.js" defer></script>
+
+    <script>
+        function reGen() {
+            window.location.href="/reGen/reGen.html";
+        }
+
+        function calender() {
+            window.location.href="/calender/cal.html";
+        }
+
+        function timer() {
+            window.location.href="/timer/timer.html";
+        }
+    </script>
 </head>
 
 <!--*************************************************************
@@ -47,7 +61,7 @@
 <body>
     <div class="container">
         <div class="header" id="header">
-            <h3 id="subtext">Some extra text about the amazing site</h3>
+            <h3 id="subtext">When You’ve Got More Procrastination Than Preparation</h3>
             <h1 id="title">Cram Jam</h1>
         </div>
         <div class="nav" id="nav">
@@ -55,11 +69,11 @@
                 <i class="fa fa-bars"></i>
             </a>
             <a id="home" href="/index.html">Home</a>
-            <a href="">Calender</a>
-            <a href="">To-Do</a>
-            <a href="">Study Timer</a>
+            <a href="/calender/cal.html">Calender</a>
+            <a href="/to-do/todo.html">To-Do</a>
+            <a href="/timer/timer.html">Study Timer</a>
             <a href="/reGen/reGen.html">Resource Generator</a>
-            <a href="">Help Resources</a>
+            <a href="/help/help.html">Help Resources</a>
             
         </div>
         <div class="content" id="one">
@@ -95,24 +109,50 @@
                 
                 <div class="smallImage" id="imageOne">
                     <img src="/assests/imageOne.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Study Timer</button>
+                    <button onclick="timer()" class="w3-hover-shadow" id="pageButton">Study Timer</button>
                 </div>
-                
                 
                 <div class="smallImage" id="imageTwo">
                     <img src="/assests/imageTwo.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Resource Generator</button>
+                    <button onclick="reGen()" class="w3-hover-shadow" id="pageButton">Resource Generator</button>
                 </div>
                 
                 <div class="smallImage" id="imageThree">
                     <img src="/assests/imageThree.jpg" id="smallImage">
-                    <button class="w3-hover-shadow" id="pageButton">Calender</button>
+                    <button onclick="calender()" class="w3-hover-shadow" id="pageButton">Calender</button>
                 </div>
 
                 
             </div>
         </div>
-        <div class="footer" id="footer"></div>
+        
+        <div class="footer" id="footer">
+            <div class="aboutTag" id="aboutTag">
+                <h4>about</h4>
+                <p>Cram Jam is your go-to resource for mastering tough subjects quickly. We provide bite-sized study guides, tips, and tools designed to help you ace your exams and boost your confidence. Study smart, not hard with Cram Jam!</p>
+            </div>
+
+            <div class="quickLinks" id="quickLinks">
+                <h4>quick links</h4>
+                <a href="/calender/cal.html" id="cal">Calender</a>
+                <a href="/timer/timer.html" id="timer">Study Timer</a>
+                <a href="/reGen/reGen.html" id="reGen">Resource Generator</a>
+            </div>
+
+            <div class="contact" id="contact">
+                <h4>contact</h4>
+                <div id="input">
+                    <input type="text" id="message" placeholder="Enter Message">
+                    <button onclick="writeMessage()" id="bMessage">Send</button>
+                </div>
+
+                <div id="social">
+                    <a href="#" id="facebook" class="fa fa-facebook"></a>
+                    <a href="#" id="twitter" class="fa fa-twitter"></a>
+                    <a href="#" id="instagram" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
